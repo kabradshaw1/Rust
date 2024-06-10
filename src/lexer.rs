@@ -7,7 +7,7 @@ impl Lexer {
   pub fn new(input: &str) -> Lexer {
     todo!();
   }
-  fn next_token() -> Token {
+  fn next_token(&self) -> Token {
     todo!();
   }
 }
@@ -16,6 +16,7 @@ impl Lexer {
 mod test {
   use crate::token::{Token, TokenKind};
   
+  use super::Lexer;
   #[test]
   fn test_next_token() {
 
@@ -63,8 +64,8 @@ mod test {
     let lexer: Lexer = Lexer::new(input);
 
     for (idx, exp_token) in expected.into_iter().enumerate() {
-      let recv_token: Token = lexer.next_token();
-      assert_eq!(exp_token.kind, recv_token.kind);
+      let recv_token = lexer.next_token();
+      assert_eq!(exp_token.kind, recv_token.kind, "tests[{idx}] - token type wrong. expected={}, got={}", exp_token.kind, recv_token.kind);
     }
   }
 }

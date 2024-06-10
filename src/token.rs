@@ -1,8 +1,10 @@
+#[derive(PartialEq)]
 pub struct Token {
   pub kind: TokenKind,
   pub literal: String,
 }
 
+#[derive(PartialEq)]
 pub enum TokenKind {
   Illegal,
   Eof,
