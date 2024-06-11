@@ -8,9 +8,11 @@ pub struct Token {
 pub enum TokenKind {
   Illegal,
   Eof,
+  
   // Identifiers + literals
   Ident,
   Int,
+
   // Operators
   Assign,
   Plus,
@@ -23,6 +25,7 @@ pub enum TokenKind {
   LBrace,
   RBrace,
   // Keywords
+
   Function,
   Let,
 }
